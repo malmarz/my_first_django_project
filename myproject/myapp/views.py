@@ -7,12 +7,8 @@ def test_view(request):
 
     name = "mohammad"
 
-    return HttpResponse(f"""
-    <HTML>
-        <head></head>
-        <body>
-            <h1>Hello { name } </h1>
-            <h2>This is our</h2> first HTML page
-        </body>
-    </HTML>
-    """)
+    c = {}
+    c["z"] = name
+    c["age"] = 29
+
+    return render(request, "test.html", c)
