@@ -6,9 +6,21 @@ def test_view(request):
     print("Request:", dir(request))
 
     name = "mohammad"
+    y = "Accounting"
 
     c = {}
-    c["z"] = name
+    c["name"] = name
     c["age"] = 29
+    c["major"] = "Finance"
+    c["majors"] = [
+        "MIS",
+        "Finance",
+        "ORM",
+        "Marketing",
+        "MAnagement",
+        "Economics",
+        "Public Admin",
+        "Accounting",
+    ]
 
     return render(request, "test.html", c)

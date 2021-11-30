@@ -1,13 +1,32 @@
 <HTML>
     <head></head>
     <body>
-        <h1>Hello {{z}}</h1>
+        <h1>Hello {{name}}</h1>
         <h2>This is our</h2> first HTML page
+        <p>Your major is {{ major }}</p>
+       
+        <h3>Available majors: {{ majors }}</h3>
+
+        <ol>
+        {% for x in majors %}
+        
+        <li>{{x}}</li> 
+        
+        {% endfor %}
+    </ol>
 
         <ul>
             <li>item 1</li>
             <li>item 2</li>
           </ul>
+
+        <ul>
+            <li>item 1</li>
+        </ul>
+        <ul>
+            <li>item 2</li>
+          </ul>
+
 
           before
           <a href="http://portal.ku.edu.kw">
