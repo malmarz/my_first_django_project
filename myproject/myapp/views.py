@@ -5,7 +5,7 @@ from django.http import HttpResponse
 def test_view(request):
     print("Request:", dir(request))
 
-    name = request.GET["username"] # .get("username")    #["username"]
+    name = request.GET.get("username")    #["username"]
     y = "Accounting"
 
     c = {}
@@ -24,3 +24,16 @@ def test_view(request):
     ]
 
     return render(request, "test.html", c)
+
+def greet_view(request, u=None, a=None):
+
+    # Same as below 
+    # p = {}
+    # p["username"] = u
+
+    p = {
+         "username":u,
+         "age":a,
+    }
+
+    return render(request, "greet2.html", p)
